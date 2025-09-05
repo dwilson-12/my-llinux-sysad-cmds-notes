@@ -1,0 +1,34 @@
+* Redundant Array of Independent Disk (RAID)
+* RAID is designed to store the same data in different locations on multiple hard disks or solid-state drives (SSDs) 
+  to preserve data in the event of a drive failure
+* RAID are mostly configured in physical disk
+
+
+Purpose: To have redundancy
+
+Type of RAID
+
+1. RAID0
+2. RAID1
+3. RAID5
+
+RAID 0 offers no redundancy and instead uses striping, 
+i.e., data is split across all the drives. 
+This means RAID 0 offers no fault tolerance; if any of the constituent drives fails, the RAID unit fails.
+
+RAID 1 offers redundancy through mirroring, BUT it's slow.
+i.e., data is written identically to two drives
+
+RAID 5 the way this raid work is:
+
+1. You need to have 3 or more disk
+2. Fast and can be stored large amount of data.
+3. The data is not duplicated, but it's striped or spread accross multiple disks.
+4. There is another very important piece of information that is being evenly spread accross the disk,
+   and that information is parity.
+5. Parity is used to rebuild the data in the event of a disk failure
+6. If disk were to fail you would not lose any data, because all you have to do is to replace
+   the failed disk with a new one and raid 5 used the parity information from the other disk
+   to rebuild the data on the new hard drive.
+7. However, if 2 disc were fail at the same time, then all the data would be lost.
+8. because raid5 can only handle 1 disk failure, so if 2 disk fails the data is loss.

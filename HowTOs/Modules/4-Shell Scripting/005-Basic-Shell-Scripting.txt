@@ -1,0 +1,12 @@
+• Output to screen using “echo”
+
+• Creating tasks
+	Telling your id, current location, your files/directories, system info 
+	Creating files or directories
+	Output to a file “>"
+
+• Filters/Text processors through scripts (cut, awk, grep, sort, uniq, wc)
+
+variable
+
+a='word'

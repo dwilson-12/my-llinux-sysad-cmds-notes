@@ -1,0 +1,12 @@
+To syncronize your system's clock with the external clock that serves as chronyd server.
+$ yum install chrony
+* Package name	= chronyd
+* Conf. file	= /etc/chronyd.conf
+* Log file	= /var/log/chrony
+* Service	= systemctl start/restart chronyd
+* Prog. command	= chronyc
+
+$ chronyc
+> help
+
+see available commands with help

@@ -1,0 +1,11 @@
+* What is wc command?
+	The command read either standard input or a list of files and generates: newline count, word count, and byte count
+
+$ wc --version OR wc --help	= check version or help
+$ wc file			= check file line count, word count and byte count
+$ wc -l file			= get the number of lines in a file
+$ wc -w file			= get the number of words in a file
+$ wc -c file			= get the number of bytes in a file
+$ wc DIRECTORY			= NOT allowed
+$ ls -l | wc -l			= Number of files
+$ grep keyword | wc -l		= Number of keyword lines.

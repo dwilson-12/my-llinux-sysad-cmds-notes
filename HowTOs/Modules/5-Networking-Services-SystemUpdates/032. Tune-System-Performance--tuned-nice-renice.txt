@@ -1,0 +1,66 @@
+* Linux system comes fined tunned by default when you install, 
+ however there are a few tweaks that can be done based on system performance and application requirements.
+
+Those are:
+1. Optimize system performance by selecting a TUNING PROFILE managed by the tuned daemon.
+2. Prioritize or de-prioritize specific processes with the NICE and RENICE commands.
+
+What is tuned?
+
+* Tuned pronounced as tune-d
+* Tune is for system tuning and d is for daemon
+* It is systemd service that is used to tune Linux system performance
+* It is installed in CentOS/Redhat version 7 and 8 by default
+* tuned package name is tuned
+* The tuned service comes with pre-defined profiles and settings
+  Based on selected profile the tuned service automictically adjust system to get the best performance.
+  E.g. tuned will adjust networking if you are downloading a large file or it  will adjust IO settings if it detects high storage read/write
+* The tuned daemon applies system settings when the service starts or upon selection of a new tuning profile.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+* Check if tuned package has been installed
+	$ rpm –qa | grep tuned
+
+* Install tuned package if NOT installed already
+	$ yum install tuned
+
+* Check tuned service status
+	$ systemctl status|enable|start tuned
+	$ systemctl enable tuned (To enable at boot time)
+
+* Command to change setting for tuned daemon
+	$ tuned-adm
+
+* To check which profile is active
+	$ tuned-adm active 
+
+* To list available profiles
+	$ tuned-adm list
+
+* To change to desired profile
+	$ tuned-adm profile profile-name
+
+* Check for tuned recommendation
+	$ tuned-adm recommend
+
+* Turn off tuned setting daemon
+	$ tuned-adm off
+
+* Another way of keeping your system fine-tuned is by prioritizing processes through nice and renice command
+* If a server has 1 CPU then it can execute 1 computation/process at a time as they come in (first come first served) while other processes must wait
+* With nice and renice commands we can make the system to give preference to certain processes than others
+* This priority can be set at 40 different levels
+* The nice level values range from -20 (highest priority) to 19 (lowest priority) and by default, 
+  processes inherit their nice level from their parent, which is usually 0.
+
+
+* To set the process priority 
+	$ nice –n # process-name
+	e.g. 
+	$ nice –n -15 top
+
+
+* To change the process priority 
+	$ renice –n # process-name
+	e.g. $ renice –n 12 PID. 

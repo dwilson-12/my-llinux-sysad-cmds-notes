@@ -1,0 +1,10 @@
+1. Press the power on
+2. CPU starts & pulled instruction from the BIOS (Basic Input Output System) software (ROM)
+   CMOS has BIOS setting including system time, date as well as hardware settings
+3. BIOS Runs the POST (Power-on self test) test every device attach on the computer and make sure all
+   is in working condition.
+4. BIOS go now to disk and finds the 1st block on HDD and that sector is MBR (Master boot record)
+   that has the operating system (OS)
+5. The OS gets loaded to RAM or memory.
+
+THIS PROCESS IS CALLED BOOTSTAP - Bootstrap is how your computer is going to power on

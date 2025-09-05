@@ -1,0 +1,35 @@
+* A wildcard is a character that can be used as a substitute for any of a class of characters
+  in a search
+
+	*  - represents zero or more characters
+	?  - represents a single character
+	[] - represents a range of characters
+
+	Other wildcards
+
+	\ = (slash) 		- as an escape character
+	^ = (caret) 		- the beginning of the line
+	$ = (dollar sign)	- the end of the line
+
+Examples:
+
+# Create 9 files
+$ touch abcd{1..9}-xyz
+
+# Remove multiples files that starts abc filename
+$ rm abc*
+
+# List file names that starts abcd
+$ ls -l abcd*
+
+# Remove everything that end with xyz
+$ rm *xyz
+
+# List files that has the character bcd
+$ ls -l ?bcd*
+
+# Anything that has c or d letter in a file
+$ ls -l *[cd]*
+
+# Remove files that has x and y name together
+$ rm *xy*

@@ -1,0 +1,8 @@
+Commands used for DNS lookup
+	* nslookup
+	* dig
+
+These commands resolves IP to Hostname, Hostname to IP, or Hostname to Hostname
+
+$ nslookup <URL>
+$ dig <URL>

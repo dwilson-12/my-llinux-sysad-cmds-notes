@@ -1,0 +1,24 @@
+* By default there are 4 diff types of crontabs
+	- Hourly
+	- Daily
+	- Weekly
+	- Monthly
+
+* All the above crons are setup in
+	$ /etc/cron._ (directory) # put your script in this directories
+
+* The timing for each are set in
+	$ /etc/anacrontab -- except hourly
+
+* For hourly 
+	$ /etc/cron.d/0hourly.
+
+$ cd /etc/
+$ ls -l cron.*
+
+OR
+
+$ ls -l | grep cron
+
+* the timing for hourly
+$ cat /etc/cron.d/0hourly

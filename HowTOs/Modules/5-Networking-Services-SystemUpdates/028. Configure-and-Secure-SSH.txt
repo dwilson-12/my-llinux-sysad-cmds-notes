@@ -1,0 +1,52 @@
+* Following are the most common configuration an administrator should take to secure SSH.
+
+1. Configure Idle Timeout Interval
+   Avoid having an unattended SSH session.
+
+	* Become root
+	* Edit your /etc/ssh/sshd_config file and add the ff. line.
+	* ClientAliveInterval 600
+	* ClientAliveCountMax 0
+	* $ systemctl restart sshd
+
+*  The idle timeout interval you are setting is in sec. (600 secs = 10 mins.).
+   Once the interval has passed, the idle user will be automatically logged out.
+
+2. Disable root login
+   Disabling root login should be one of the measures you should take when setting
+   up the system for the first time. It disable any user to login to the system
+   with root account.
+
+	* Become root
+	* Edit your /etc/ssh/sshd_config file and replace PermitRootLogin yes to no
+	* PermitRootLogin no
+	* $ systemctl restart sshd
+
+3. Disable Emtpy Passwords
+   You need to prevent remote logins from accounts with empty passwords for added security
+
+	* Become root
+	* Edit your /etc/ssh/sshd_config file and remove # from the following line
+	* PermitEmptyPasswords no
+	* $ systemctl restart sshd
+
+4. Limit User's SSH Access
+   To provide another layer's security, you should limit your SSH logins to only certain
+   user's  who need remote access
+
+	* Become root
+	* Edit your /etc/ssh/sshd_config file and add
+	* AllowUsers user1 user2
+	* $ systemctl restart sshd
+
+5. Use a different port
+   By default SSH port run on 22. Most hackers looking for any open SSH servers will look
+   for port 22 and changing can make the system much more secure.
+	
+	* Become root
+	* setenforce 0
+	* Edit your /etc/ssh/sshd_config file and remove # from the ff. line and change the port number
+	* port 22
+	* $ systemctl restart sshd
+
+6. SSH-Keys - Access Remote Server w/o Password

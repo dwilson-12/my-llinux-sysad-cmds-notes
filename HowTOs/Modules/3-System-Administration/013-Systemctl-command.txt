@@ -1,0 +1,26 @@
+It is used to start application.
+
+* systemctl command is new tool to control system services
+* It is available in version 7 and later and it replaces the "service" command
+
+Usage example:
+
+$ systemctl start|stop|status servicename.service	(firewalld)
+$ systemctl enable servicename.service
+$ systemctl restart|reload servicename.service	= used after configuration changes
+$ systemctl list-units --all 
+
+The output of the ff colums:
+	* UNIT: The systemd unit name
+	* LOAD: Whether the unit's configuration has been parsed by systemd. The configuration of loaded units is kept in memory
+	* ACTIVE: A summary state about whether the unit is active. This is usually a fairly basic way to tell if the unit has started successfully or not.
+	* SUB: This is a lower-level state that indicates more detailed information about the unit. This often varies by unit type, state, and the actual method in which the unit runs.
+	* DESCRIPTION: A short textual description of what the unit is/does.
+
+TO ADD A SERVICE UNDER SYSTEMCTL MANAGEMENT:
+* Create a unit file in /etc/systemd/system/servicename.service
+
+TO CONTROL SYSTEM W/ SYSTEMCTL
+$ systemctl poweroff
+$ systemctl halt
+$ systemctl reboot

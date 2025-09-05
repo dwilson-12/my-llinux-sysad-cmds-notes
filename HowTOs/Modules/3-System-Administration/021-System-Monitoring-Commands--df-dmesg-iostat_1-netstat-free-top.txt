@@ -1,0 +1,35 @@
+# Gives cpu information, memory information, etc.
+$ top
+
+# disk partition infomation
+$ df -h
+
+# free up space if usage is 100% to see what file is 
+$ du 
+
+# output of the system related warnings, failures, and error messages
+$ dmesg | more
+
+# shows whats coming in and going out, it shows how communication happens with internal devices.
+$ iostat
+
+# keep running and refresh it every 1 seconds
+$ iostat 1
+
+# networking
+$ netstat -rnv
+$ netstat | more
+
+# display routing information such as gateway info, source ip assigned to interface
+$ ip route
+$ ip route | column -t		# readable form
+
+# display active socket connections
+$ ss | more
+
+# output memory utilization
+$ free
+
+# cpu info and memory info
+$ cat /proc/cpuinfo
+$ cat /proc/meminfo

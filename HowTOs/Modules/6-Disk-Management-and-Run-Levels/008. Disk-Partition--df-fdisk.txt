@@ -1,0 +1,6 @@
+* Report file system disk space usage in human readable format
+	$ df -h
+* Manipulate disk partition table
+	$ fdisk
+* List the partition tables
+	$ fdisk -l

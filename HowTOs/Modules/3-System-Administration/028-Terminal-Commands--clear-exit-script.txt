@@ -1,0 +1,22 @@
+# Clears your screen
+$ clear
+
+# Exit out of the shell, terminal or a user session
+$ exit
+
+# The script command stores terminal activities in a log file that can be named by a user,
+  when a name is not provided by a user, the default file name, typescript is used.
+$ script
+
+USAGE:
+
+# This file is created in current working directory
+$ script [filename.log]
+
+# it will exit from script, and stop recording and capturing the output of the session
+$ exit
+
+When to use script command?
+When troubleshooting an issue.
+Creating some tools or script.
+In case a month or a year from now and want to perform same task, you can easily run the script.

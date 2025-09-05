@@ -1,0 +1,13 @@
+* Two type of upgrades
+	* Major verion	= 5, 6, 7
+	* Minor version = 7.3 and 7.4
+
+Minor version = yum update
+
+Example:
+$ yum update -y
+
+yum update vs upgrade
+
+upgrade = delete packages/delete old package and update new package
+update  = preserve old packages

@@ -1,0 +1,21 @@
+* Replace a string in a file with a newstring
+* Find and delete a line
+* Remove empty lines
+* Remove the first or n lines in a file
+* To replcae tabs with spaces
+* Show defined lines from a file
+* Substitute within vi editor
+
+$ sed -i 's/keyword/newword/g' [filename]	= without the option -i it will only display the changes at the screen
+$ sed '/keyword/d' [filename]		 	= delete the line with the indicate keyword
+$ sed '/^$/' [filename]				= remove empty lines
+$ sed '1d' [filename]				= delete the 1st line
+$ sed '1,2d' [filename]				= delete the 1st two line
+$ sed 's/\t/ /g'				= replaced tabs with spaces
+$ sed -n 12,18p [filename]			= see specific lines 12 to 18
+$ sed 12,18p [filename]				= view everything except line 12 to 18
+$ sed G [filename]				= every after name there should be empty line after each character
+$ sed '8!s/keyword/S/g' [filename]		= Replace keyword with S except the line number 8
+
+# inside vi editor you can substitute a keyword
+%s/keyword/newKeyword/

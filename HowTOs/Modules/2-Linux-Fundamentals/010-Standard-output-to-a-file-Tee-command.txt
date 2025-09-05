@@ -1,0 +1,15 @@
+* "tee" command is used to store and (both at the same time) output of any command.
+
+* The command is named after the T-splitter used in plumbing.
+  It basically breaks the output of a program so that it can be both displayed and saved in a file.
+  It does both the task simultaneously, copies the result into the specified files or variables and also display the result.
+
+Example:
+
+$ tee --help
+
+# display the output on the screen and saved's the file.
+$ echo "some text" | tee filename
+
+# appends a text to a file
+$ echo "add some text" | tee -a filename filename2 filname3

@@ -1,0 +1,59 @@
+* Add Hard disk
+
+* Partition
+$ fdsik /dev/sdc
+Command (m forhelp):	n, p, t
+			L
+			8e
+			p to confirm
+			w
+
+# Create a physical Volume
+$ pvcreate /dev/sdc1
+$ pvdisplay
+
+# Create a volume group
+$ vgcreate oracle_vg /dev/sdc1
+$ vgdisplay oracle_vg
+
+# Create Logical Volumes
+$ lvcreate -n oracle_lv --size 1000M oracle_vg
+$ lvdisplay
+
+# Format the disk
+$ mkfs.xfs /dev/oracle_vg/oracle_lv
+
+# Mount the logical volume
+$ mkdir /oracle
+$ mount /dev/mapper/oracle_vg-oracle_lv /oracle
+
+$ df -h
+$ lvs
+
+# mount this partition at boot time
+/dev/oracle_vg/oracle_lv	/oracle	xfs	defaults	0	0
+
+
+CentOS / RHEL: How to delete LVM volume
+https://www.thegeekdiary.com/centos-rhel-how-to-delete-lvm-volume/
+
+Steps:
+
+1. Delete the entry of the mount point from the /etc/fstab :
+2. Unmount the mount point :
+	$ umount /data01
+
+3. Disable lvm :
+	$ lvchange -an /dev/mapper/datavg-testlv
+
+4. Delete lvm volume :
+	$ lvremove /dev/datavg/testlv
+
+5. Disable volume group :
+	$ vgchange -an datavg
+
+6. Delete volume group :
+	$ vgremove datavg
+
+7. Delete physical Volumes being used for the volume group “datavg” :
+	$ pvremove /dev/sdb  /dev/sdc

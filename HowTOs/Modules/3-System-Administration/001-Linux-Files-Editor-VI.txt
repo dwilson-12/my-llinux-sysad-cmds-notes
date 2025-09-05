@@ -1,0 +1,26 @@
+3 MODES
+
+1. insert mode
+2. command mode
+3. last line mode
+
+* vi supplies commands for:
+	1. Inserting and deleting txt
+	2. Replacing text
+	3. Moving around the file
+	4. Finding and substituting strings
+	5. Cutting and pasting text
+
+* Most common keys
+	1. i	= insert
+	2. Esc	= Escape out of any mode
+	3. r	= replace
+	4. dd 	= delete
+	5. :q!	= quit without saving
+	6. :wq!	= quit and save
+	7. u 	= undo deleted line
+	8. x 	= remove 1 character
+	9. o 	= create a new line and automatically go to insert mode
+	10. / 	= search for keyword type.. /keyword and hit enter
+
+

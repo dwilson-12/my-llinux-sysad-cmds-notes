@@ -1,0 +1,5 @@
+# change hostname base on the purpose
+$ hostnamectl --set-hostname newhostname
+
+Version 7 = Edit /etc/hostname
+Version 6 = Edit /etc/sysconfig/network

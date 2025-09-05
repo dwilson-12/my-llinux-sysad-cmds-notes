@@ -1,0 +1,6 @@
+$ arch
+
+* Difference between a 32-bit and 64-bit CPU
+
+A big difference between 32-bit processors and 64-bit processors is the NUMBER OF CALCULATIONS
+PER SECOND they can perform, which affects the speed at which they can complete tasks.

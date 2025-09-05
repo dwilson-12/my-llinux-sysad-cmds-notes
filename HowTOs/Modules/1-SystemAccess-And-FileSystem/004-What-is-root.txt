@@ -1,0 +1,7 @@
+3 types of root
+
+1. Root account
+
+2. Root as / - root directory
+
+3. Root Home directory /root - root home directory

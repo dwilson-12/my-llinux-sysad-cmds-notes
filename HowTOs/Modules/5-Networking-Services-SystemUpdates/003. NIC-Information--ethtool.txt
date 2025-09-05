@@ -1,0 +1,11 @@
+NIC = Network Interface Card
+Example:
+	$ ethtool enp0s3
+
+Other NICs
+	lo	= The loopback device is a special interface that your computer uses to communicate with itself.
+	     	  If is used to mainly for diagnostics and troubleshooting, and to connect to servers running
+	     	  on the local machine.
+
+	virb0	= The virb0, or "Virtual bridge 0" interface is used for NAT (Network Address Transalation)
+		  Virtual env sometimes use it to connect to the outside network.

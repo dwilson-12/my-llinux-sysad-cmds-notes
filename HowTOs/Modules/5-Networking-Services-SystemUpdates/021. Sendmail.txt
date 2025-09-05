@@ -1,0 +1,22 @@
+* Purpose?
+	Send and receive emails
+* File
+	/etc/mail/sendmail.mc	= this is the file where you define the mail relay server
+	/etc/mail/sendmail.cf
+	/etc/mail
+
+* Service
+	$ systemctl restart sendmail
+
+* Command
+	$ mail -s "subject line" email@mydomain.com
+	$ ctrl+d # to get out from the mail program
+
+
+$ yum install sendmail -y
+$ yum install sendmail-cf -y
+
+$ vi /etc/mail/sendmail.mc
+
+# Look for this line and defined your relay mail server
+dnl define('SMART_HOST', 'mail.relay.server')dnl

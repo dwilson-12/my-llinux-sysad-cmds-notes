@@ -1,0 +1,11 @@
+* Permission to a file and directory can also be assigned numerically
+	$ chmod ugo+r FILE
+	or
+	$ chmod 444 FILE
+
+* Changing permissions - numeric method
+
+4 = read
+2 = write
+1 = execute
+

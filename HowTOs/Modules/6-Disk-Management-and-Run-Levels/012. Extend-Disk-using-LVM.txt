@@ -1,0 +1,19 @@
+Purpose: When the disk is full
+
+Few Options
+* Delete older files up disk space
+* Add new physical disk mount to /foldername
+* Create a new virtual disk and mount to /foldername
+* Or extend /foldername through LVM
+
+# partition disk
+$ fdisk /dev/sdd
+Command (m for help): n, p, 1, default, default, p, t, L, 8e, w
+
+# extend the file system
+$ pvdisplay	# shows which group is associated on which disk or $ pvs
+$ vgdisplay oracle_vg
+$ pvcreate /dev/sdd1
+$ vgextend oracle_vg /dev/sdd1
+$ lvextend -L+1020M /dev/mapper/oracle_vg-oracle_lv
+$ xfs_growfs /dev/mapper/oracle_vg-oracle_lv

@@ -1,0 +1,44 @@
+User Account Management
+
+Commands
+
+* useradd
+* groupadd
+* userdel
+* groupdel
+* usermod
+* newusers
+
+Files
+
+* /etc/passwd
+* /etc/group
+* /etc/shadow
+
+Example:
+
+$ useradd -g superheroes -s /bin/bash -c "user description" -m -d /home/spiderman spiderman
+
+Sample commands
+
+$ useradd username		 = create a user
+$ id username			 = verify if you successfully created a user
+$ groupadd groupname		 = create group
+$ cat /etc/group		 = verify group
+$ userdel -r username		 = delete user as well as it's home directory
+$ groupdel groupname 		 = delete group
+$ usermod			 = modify usesr account
+$ usermod -G groupname username	 = add user to the group.. verify .. grep username /etc/group
+$ chgrp -R groupname userhomedir = change the group of the user home directory
+$ passwd username		 = create password for the user
+
+* Create multiple accounts using newusers command
+	* Create the file first and the content will be like this:
+	user-list.txt
+	
+	2gadmin:2gadmin123:1003:1003::/home/2gadmin:/bin/bash
+	testuser:testuser123:1004:1004::/home/testuser:/bin/bash
+	demouser:demouser123:1005:1005::/home/demouser:/bin/bash
+
+	# newusers <filename.txt>
+

@@ -1,0 +1,34 @@
+There are 3 additional permissions in Linux
+
+* setuid: bit tells Linux to run a program with the effective user id of the owner instead of the executor: 
+  (e.g. passwd command) → /etc/shadow
+
+* setgid: bit tells Linux to run a program with the effective group id of the owner instead of the executor: 
+  (e.g. locate or wall command)
+
+Please note: This bit is present for only files which have executable permissions
+sticky bit: a bit set on files/directories that allows only the owner or root to delete those files
+
+
+* To assign special permissions at the user level
+	$ chmod u+s xyz.sh
+
+* To assign special permissions at the group level
+	$ chmod g+s xyz.sh
+
+* To remove special permissions at the user or group level
+	$ chmod u-s xyz.sh
+	$ chmod g-s xyz.sh
+
+Please note:
+These bits work on c programming executables not on bash shell scripts
+
+* To find all executables in Linux with setuid and setgid permissions
+	$ find -perm /6000 -type f
+
+Sticky bit
+
+* It is assigned to the last bit of permissions
+	-rwx rwx rwt
+
+Why?	Example of /tmp directory

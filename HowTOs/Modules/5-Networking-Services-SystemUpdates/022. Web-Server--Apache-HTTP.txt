@@ -1,0 +1,7 @@
+* Purpose			= To serve webpages
+* Service or Package name	= httpd
+* Files				= /etc/httpd/conf/httpd.conf
+	  			  /var/www/html/index.html
+* Service			= systemctl restart httpd
+				  systemctl enable httpd
+* Log Files			= /var/log/httpd/

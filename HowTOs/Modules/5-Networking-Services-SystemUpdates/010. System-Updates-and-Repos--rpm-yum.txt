@@ -1,0 +1,15 @@
+					System Updates and Repos
+* yum (CentOS), apt-get (other Linux)
+	* Telling the system to go online with URL and download the package and install the package as well.
+* rpm (Red hat Package Manager)
+	* used if you already have a package downloaded in system and install it locally.
+	* rpm used when there's no internet access.
+	
+$ yum install <package name>
+
+# to install the package
+$ rpm -hiv [/absolute/path/filename.rpm]
+
+# remove the package
+$ rpm -e [full name]
+$ yum remove [package name]

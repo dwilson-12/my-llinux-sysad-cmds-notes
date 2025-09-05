@@ -1,0 +1,5 @@
+The non-interactive network downloader
+
+When the package is not available in yum repo we need the wget command.
+
+$ wget <url>

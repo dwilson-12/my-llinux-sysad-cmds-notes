@@ -1,0 +1,12 @@
+* Cut is a command line utility that allows you to cut parts of lines from specified files or piped data and print
+  the result to standard output. It can be used to cut parts of a line by delimeter; byte position, and character.
+
+$ cut [filename]		=  does not work.
+$ cut --version			=  Check version.
+$ cut -c1 [filename]	        =  List one character.
+$ cut -c1,2,4 [filename]	=  pick and choose character.
+$ cut -c1-3 [filename]		=  list range of characters.
+$ cut -c1-3,6-8 [filename]	=  list specific range of characters.
+$ cut -b1-3 [filename]		=  list by byte size.
+$ cut -d: -f 6 /etc/passwd	=  list first 6th column seperated by :
+$ ls -l | cut -c2-4		=  Only print user permissions of fiiles/dir.

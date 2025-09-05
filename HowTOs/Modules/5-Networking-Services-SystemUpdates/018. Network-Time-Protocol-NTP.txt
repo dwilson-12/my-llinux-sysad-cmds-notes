@@ -1,0 +1,22 @@
+NTP syncronize computer's time to another server
+
+File	= /etc/ntp.conf
+Service	= systemctl restart ntpd
+command	= ntpq
+port	= 123
+
+$ yum install ntp
+
+Modify /etc/ntp.conf file
+* find this line and add your ntp server IP address
+-
+-
+-
+server < IP add or domain name>
+
+$ systemctl start ntpd
+$ systemctl status ntpd
+$ systemctl enable ntpd
+
+# tells which server is connected to get the time
+$ ntpq

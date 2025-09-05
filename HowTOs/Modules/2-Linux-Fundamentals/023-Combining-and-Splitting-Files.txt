@@ -1,0 +1,13 @@
+* There's a situation when you need to cut the files to become smaller files when compressing is not enough to make the file size small.
+* When you need to send the file but the size is too large.
+
+* Multiple files can be combined into one and
+* One file can be split into multiple files
+
+$ cat file1 file2 file3 > file4
+$ split file4
+
+e.g
+$ split -l 300 file.txt childfile
+
+Split file.txt into 300 lines per file and output to childfileaa, childfileab, and childfileac

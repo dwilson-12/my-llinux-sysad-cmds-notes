@@ -1,0 +1,144 @@
+* DNS is a system that translates a hostname to IP address.
+	  Package to installed is called "bind"
+
+Purpose?
+	Hostname to IP		(A Record)
+	IP to hostname		(PTR Record)
+	Hostname to Hostname	(CNAME Record)
+
+Files
+	named			= named of the process of the DNS
+	/etc/named.conf		= Configuration file
+	/var/named		= dir, all zone files where you define all the hostname to IP, IP to hostname
+
+Service
+	$ systemctl restart named
+
+			Download, Install, and Configure DNS
+
+* Create a snapshot of your virtual machine
+* Setup
+    * Master DNS
+    * Secondary or Slave DNS
+    * Client
+
+* Domain Name	= lab.local
+* IP address	= My local IP address on enp0s3
+
+
+* Install DNS package
+	* $ yum install bind bind-utils -y
+
+* Configure DNS (summary)
+	* Modify /etc/named.conf
+	* Create two zone files (forward.lab and reverse.lab)
+	* Modify DNS file permission and start the service
+
+* Revert back to snapshot
+
+Steps:
+
+* Install DNS package
+	# yum install bind bind-utils –y
+
+* Configure DNS Server
+	# vi /etc/named.conf
+
+* Edit the line
+listen-on port 53 { 127.0.0.1; };
+with
+listen-on port 53 { 127.0.0.1; 192.168.1.29; };
+
+allow-query { localhost; }
+with
+allow-query { localhost;any; }
+
+* Start the service named
+	# systemctl start named
+	# systemctl enable named
+
+* Allow port 53
+
+	# firewall-cmd --permanent --add-port=53/tcp
+	# firewall-cmd --permanent --add-port=53/udp
+	# firewall-cmd --reload
+	# firewall-cmd --list-all
+
+* Create zones in /etc/named.conf
+  Go to the bottom of the file before “include” line and add
+
+zone "lab.local" IN {
+	type master;
+	file "forward.lab";
+	allow-update { none; };
+};
+zone "1.168.192.in-addr.arpa" IN {
+	type master;
+	file "reverse.lab";
+	allow-update { none; };
+};
+
+include "/etc/named.rfc1912.zones";
+include "/etc/named.root.key";
+
+* Create zone files in /var/named/	foward.lab and reverse.lab
+  copy the named.localhost file and edit it
+
+forward.lab
+$TTL 1D
+@	IN	SOA	masterdns.lab.local.	root.lab.local. (
+						0	; serial
+						1D	; refresh
+						1H	; retry
+						1W	; expire
+						3H )	; minimum
+
+@	IN	NS	masterdns.lab.local.
+@	IN	A	<masterdns IP>
+masterdns	IN	A	masterdns IP>
+client	IN	A	<IP Addr>
+client	IN	A	<IP Addr>
+client	IN	A	<IP Addr>
+
+reverse.lab
+$TTL 1D
+@	IN	SOA	masterdns.lab.local.	root.lab.local. (
+						0	; serial
+						1D	; refresh
+						1H	; retry
+						1W	; expire
+						3H )	; minimum
+
+@	IN	NS	masterdns.lab.local.
+@	IN	PTR	lab.local.
+<last octect of IP>	IN	PTR	<DOMAIN NAME>
+29	IN	PTR	masterdns.lab.local.
+27	IN	PTR	client.lab.local.
+
+* Change the group ownership of those files to named
+
+	# chgrp named forward.lab
+	# chgrp named reverse.lab
+
+* Check if the configuration is all correct
+
+	# named-checkconf -z /etc/named.conf
+
+* Check if the zone files are correct
+
+	# named-checkzone forward /var/named/forward.lab
+	# named-checkzone reverse /var/named/reverse.lab
+
+* restart the service
+
+	# systemctl restart named
+
+CLIENT SIDE
+
+* edit the /etc/resolve.conf and add the IP of the nameserver
+
+search <domain name>
+serach lab.local
+
+nameserver <master DNS IP ADDR>
+nameserver 192.168.1.29

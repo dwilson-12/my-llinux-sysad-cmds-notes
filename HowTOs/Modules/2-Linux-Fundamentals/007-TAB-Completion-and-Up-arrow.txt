@@ -1,0 +1,8 @@
+* Hitting TAB key completes the available commands, files or directories.
+
+Examples:
+	$ chm TAB
+	$ ls j<TAB>
+	$ cd Des<TAB>
+
+* Hitting up arrow key on the keyboard returns the last command ran.

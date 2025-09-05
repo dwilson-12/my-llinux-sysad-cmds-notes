@@ -1,0 +1,14 @@
+* The SCP helps to transfer computer files securely from a local to a remote host.
+  It is somewhat similar to the FTP, but it adds security and authentication.
+
+* Default SCP port = 22 (same as SSH)
+
+client ==> Server 	# client wants to copy a file over to server
+
+Usage:
+
+# Copy file from local host to a remote host SCP example
+$ scp filename username@to_host:/remote/directory
+
+# From remote host to the local host /dir
+$ scp username@remotehost:filename /local/directory

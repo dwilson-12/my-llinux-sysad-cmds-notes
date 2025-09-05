@@ -1,0 +1,6 @@
+* IP
+* Subnetmask
+* Gateway
+* Static vs DHCP
+* Interface
+* Interface MAC

@@ -1,0 +1,18 @@
+* How to change the default file permission
+* umask is a command to set default permission of any newly created file/directory
+
+e.g.
+
+$ umask u+rw,g+r,o-rwx
+
+file:
+cat /etc/bashrc
+
+* To make the permanent default permission after file creation, edit the .bashrc file
+
+/home/user $ vi .bashrc
+-
+-
+-
+-
+umask <args>

@@ -1,0 +1,15 @@
+4 diff. type of storage in IT
+
+1. Local Storage
+	* RAM, HDD, SSD, etc.
+
+2. DAS (Direct Attached Storage)
+	* CD/DVD, USB flash drive, external disk directly attached with
+	  USB or other cables
+
+3. SAN (Storage Area Network)
+	* Storage attached through iSCSI or fiber cable
+
+4. NAS (Network Attached Storage)
+	* Storage attached over network (TCP/IP)
+	* E.g Samba, NFS etc.

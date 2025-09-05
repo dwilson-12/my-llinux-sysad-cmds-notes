@@ -1,0 +1,34 @@
+What are environment variables?
+	* An environment variables is a dynamic-named value that can affect the way
+	  running process will behave on a computer. They are part of the environment
+	  which a process runs.
+	* In simple words: set of defined rules and values to build an environment
+
+To view all environment variables
+	$ printenv 
+	OR 
+	$ env
+
+To view ONE environment variable
+	$ echo $SHELL
+
+To set the environment variables
+	$ export TEST=1
+	$ echo $TEST
+
+To set environment variable permanently
+	$ vi .bashrc	# copy this file for backup if you make mistake make it .bashrc.orig
+	-
+	-
+	-
+	TEST='123'
+	export TEST
+
+To set global envronment variable permanently
+	* vi /etc/profile or /etc/bashrc
+	-
+	-
+	-
+	Test='123'
+	export TEST
+	

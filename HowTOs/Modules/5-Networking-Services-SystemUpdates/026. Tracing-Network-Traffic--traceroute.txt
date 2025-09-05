@@ -1,0 +1,10 @@
+* The traceroute command is used in linux to map the journey that a packet of
+  information undertakes from it's source to its destination. One use for traceroute
+  is to locate when data loss occurs throughout a network, which could signify a node that's down.
+
+* Because each hop in the record reflects a new server or router between the originating PC and
+  the intended target, reviewing the results of a traceroute scan also lets you identify slow points
+  that may adversely affect your network traffic.
+
+Example:
+$ traceroute <URL or IP Address>

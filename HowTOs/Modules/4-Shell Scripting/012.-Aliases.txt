@@ -1,0 +1,22 @@
+• Aliases
+  The alias command allows you to define new commands. Useful for creating shortcuts for longer commands. The syntax is.
+  alias alias-name=executed_command
+
+Some examples:
+  alias	m=more
+  alias	rm="rm -i"
+  alias	h="history -r | more"
+
+To view all current aliases:
+  $ alias
+
+To remove a previously defined alias: 
+  $ unalias alias_name
+
+$ alias ls="ls -al"
+$ alias pl="pwd; ls"
+$ alias tell="whoami; hostname; pwd"
+$ alias dir="ls -l | grep ^d"		# grep everthing that starts in d"
+$ alias lmar="ls -l | grep Mar"
+$ alias wpa="chmod a+w"
+$ alias d="df-h | awk '{print \$6}' | cut -c1-4"

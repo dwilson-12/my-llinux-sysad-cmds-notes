@@ -1,0 +1,21 @@
+* at command is like crontab which allows you to schedule jobs but only once
+* When the command is run it will enter interactive mode and you can get out by pressing Ctrl D
+
+Usage:
+at HH:MM PM		= Schedule a job
+atq			= List the at entries
+atrm #			= Remove at entry
+atd			= at daemon/service that manages scheduling
+systemctl status atd	= To manage the atd service
+
+* Create at entry by scheduling a task:
+	$ at 4:45PM → (hit enter)
+	at> echo "This is my first at entry" > at-entry (hit Crtl D)
+
+Other future scheduling format:
+
+$ at 2:45 AM 101621	 = Schedule a job to run on Oct 16th, 2021 at 2:45am
+$ at 4PM + 4 days	 = Schedule a job at 4pm four days from now
+$ at now +5 hours	 = Schedule a job to run five hours from now
+$ at 8:00 AM Sun	 = Schedule a job to 8am on coming Sunday
+$ at 10:00 AM next month = Schedule a job to 10am next month

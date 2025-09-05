@@ -1,0 +1,21 @@
+File Ownership
+
+There are 2 owners of a file or directory
+	* User and group
+
+Command to change file ownership
+	* chown and chgrp
+		* chown changes the ownership of a file
+		* chgrp changes the group ownership of a file
+
+Recursive ownership change option (Cascade)
+
+	* -R
+
+NOTE: The only account that can change the ownership of a file is root user.
+
+$ su -
+$ chown root <filename>
+$ chgrp root <filename>
+
+Directory permission always comes first

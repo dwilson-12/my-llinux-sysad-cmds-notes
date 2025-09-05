@@ -1,0 +1,20 @@
+* Virtual machine
+	* Take snapshots
+
+* Physical machine
+	* Rollback a package
+		* yum install <package>
+		* yum history = shows the ID
+		* yum history undo <id>
+
+	* Rollback an update
+		* Downgrading a system to minor version (ex. RHEL7.1 to RHEL7.0)
+		  is not recommended as this might leave the system in undesired or unstable state.
+		* $ yum update			= Update will preserve them
+		* $ yum upgrade 		= Upgrade will delete obsolete packages
+		* $ yum history
+		* $ yum history undo <id>	==> rollback the update
+
+
+# To see infomation what happen to that particular ID
+$ yum history info <ID>

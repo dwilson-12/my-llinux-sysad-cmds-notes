@@ -1,0 +1,6 @@
+3 Simple ways to add text to a file
+
+1. vi
+2. Redirect command output > or >>
+3. echo > or >>
+

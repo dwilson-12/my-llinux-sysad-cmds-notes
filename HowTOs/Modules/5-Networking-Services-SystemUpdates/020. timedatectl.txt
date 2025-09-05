@@ -1,0 +1,30 @@
+* New utility for RHEL/CentOS 7/8, which comes as a part of systemd system and servive manager.
+* Repalcement for old traditional "date" command.
+* timedatectl shows/change date, time, and timezone.
+* It synchronizes the time with NTP server as well
+	* You can either use chronyd or ntpd and make the ntp setting in timedatectl as yes.
+	* Or you can use systemd-timesyncd daemon to sync time which is a replacement for
+	  ntpd and chronyd
+
+Pleae note: Redhat/CentOS does not provide this daemon in its standard repo.
+	    You will have to download it separately.
+
+Lab exercise:
+
+# To check time status
+	$ timedatectl
+
+# To view all available time zones
+	$ timedatectl list-timezones
+
+# To set the time zone
+	$ timedatectl set-timezone "America/New_York"
+
+# To set date
+	$ timedatectl set-time YYYY-MM-DD
+
+# To set date and time
+	$ timedatectl set-time '2015-11-20 16:14:50'
+
+# To start automatic time synchronization with a remote NTP server
+	$ timedatectl set-tnp true

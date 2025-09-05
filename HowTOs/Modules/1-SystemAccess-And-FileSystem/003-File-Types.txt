@@ -1,0 +1,12 @@
+7 Linux File types
+
+File Symbol	Meaning
+
+-		Regular file
+d		Directory
+l		link
+c		Special File or Device file
+s		socket
+p		Named pipe
+b		Block Device
+		

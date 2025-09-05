@@ -1,0 +1,11 @@
+* Install a program that will allow us to open image file
+	# become root
+	$ yum install ImageMagick
+	$ display <image-filename>
+
+	# centos/rhel 8 packagename = GraphicsMagick
+	$ dnf install GraphicsMagic
+
+* Command syntax to open image file in GUi
+
+image do not work on linux terminals

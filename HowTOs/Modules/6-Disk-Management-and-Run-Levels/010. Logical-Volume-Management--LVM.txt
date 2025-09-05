@@ -1,0 +1,7 @@
+* LVM allows disks to be combined together
+
+3 HDD --> group into 1 --> partition into 4
+
+Advantage:
+
+If you add new disk, you can include that on the group and associate it to the partition.

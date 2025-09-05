@@ -1,0 +1,13 @@
+* What is grep
+	- The grep command which stands for "global regular expression print," 
+	  processes text line by line and prints any lines which match a specified pattern.
+
+$ grep --version OR grep --help			= Check version or help.
+$ grep [keyword] [filename]			= Search for a keyword from a file.
+$ grep -c [keyword] [filename]			= Search for a keyword and count.
+$ grep -i [keyword] [filename]			= Search for a keyword and ignore case-sensitive.
+$ grep -n [keyword] [filename]			= Display the match lines and their line numbers.
+$ grep -v [keyword] [filename]			= Display everything but keyword.
+$ grep [keyword] [filename] | awk '{print $1}'	= Search for a keyword and then only give the 1st field.
+$ ls -l | grep Desktop				= Search for a keyword and then only give the 1st field.
+$ egrep -i "keyword1|keyword2" [filename]	= Search for 2 keywords.

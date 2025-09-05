@@ -1,0 +1,21 @@
+Creating User or Global Aliases
+
+* User	 = Applies only to a specific user profile
+* Global = Applies to everyone who has account on the system
+
+* User	 = /home/user/.bashrc
+* Global = /etc/bashrc
+
+Sample
+	# to make alias available on another session.
+	# open .bashrc file /home/user/.bashrc
+	# type at the end of the line type "alias hh="hostname"
+	# open new session and test it.
+
+	# this is only tied to a particular session.
+	$ alias hh = "hostname"
+----------------------------------------------------------------------------------------
+
+# To make alias available globally edit the /etc/bashec file
+	# type at the end of the line "alias hh="hostname"
+	# open another session and test it

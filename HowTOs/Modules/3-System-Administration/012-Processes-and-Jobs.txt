@@ -1,0 +1,17 @@
+Application and jobs
+
+* Application	= Service
+* Script	= Shell scripts or Commands are list of instructions eg. adduser, cd, pwd, etc.
+* Process	= Service --> Process1 --> Process2
+* Daemon	= runs continuely until interrupted
+* Thread	= Service --> Process --> thread1 --> thread2 and so on
+* Job		= Run a service or provess at a schedule time
+
+Process/Service Commands
+
+$ systemctl or service	= Control the systemd system and service manager
+$ ps			= allows you to see what are the processes running in linux system
+$ top			= see processes in system depending on which process you wanted to see first base on load.
+$ kill			= kills the process
+$ crontab		= used to schedule applications, process, services to execute and become job
+$ at 			= like crontab, but it schedules the process one time bases or as adhoc process

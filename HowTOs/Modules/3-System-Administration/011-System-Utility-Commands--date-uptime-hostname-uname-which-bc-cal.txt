@@ -1,0 +1,11 @@
+* System Utility Commands
+
+$ date			= current date
+$ uptime		= tells how long the machine is running
+$ hostname		= name of the machine
+$ uname			= what linux distro
+$ which [command]	= tells where the command located
+$ cal			= calender e.g. $ cal 2016, $ cal 9 1977, cal
+$ bc			= binary calculator 
+
+date --set="Thu Feb 28 14:05:15 CST 2014"

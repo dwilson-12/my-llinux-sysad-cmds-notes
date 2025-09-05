@@ -1,0 +1,3 @@
+$ diff file1 file2 ( line by line )
+
+$ cmp file1 file2 ( Byte by byte )

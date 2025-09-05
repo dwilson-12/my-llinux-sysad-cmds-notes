@@ -1,0 +1,6 @@
+Telnet	= Unsecured connection between computers
+SSH 	= Secured
+
+Two type of packages for most of the services
+	* Client package
+	* Server package

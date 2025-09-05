@@ -1,0 +1,2 @@
+What is a Kernel?
+	Ans: Interface between Hardware and Software and stored in Operating systen

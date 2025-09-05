@@ -1,0 +1,8 @@
+Service		= slapd
+
+Conf. file	= /etc/openldap/slap.d
+
+$ yum install openldap -y
+
+$ cd /etc/
+more nsswitch.conf

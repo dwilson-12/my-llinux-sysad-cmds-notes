@@ -1,0 +1,24 @@
+* inode = Pointer or numbers of a file on the hard disks
+
+* Soft Link = Link will be removed if file is removed or renamed
+
+* Hard Link = Deleting, renaming or moving the original file will not affect the hard link
+
+	ln
+	ln -s
+
+PLEASE NOTE:
+1. You cannot create soft or hard link within the same directory with the same name.
+2. Hard link only works within the same partition. 
+   Hard link is not pointing to another file when you do ls -l.
+   If you modify source file it will also modify the destination link.
+   If the source file is remove the destination does not.
+
+* Create soft link
+$ ln -s /home/dobido/<filename>
+
+* Create hard link
+$ ln <absolute path of the file>
+
+* shows the number associated with the file
+$ ls -ltri

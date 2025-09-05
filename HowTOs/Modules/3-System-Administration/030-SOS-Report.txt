@@ -1,0 +1,11 @@
+What is SOS Report?
+	* Collect and package diagnostic and support data
+
+When to use?
+	* when your in deep trouble :D
+
+Package name
+	* sos-version
+
+Command:
+	$ sosreport

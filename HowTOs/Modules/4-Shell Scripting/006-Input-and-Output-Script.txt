@@ -1,0 +1,14 @@
+* Creating a script to take input from the user
+
+read
+echo
+
+a=`hostname`
+
+echo Hello, my server name is $a
+
+echo What is your name?
+
+read $n
+
+echo your name is $n

@@ -1,0 +1,9 @@
+Move cursers
+h = move the curser to left in normal mode
+k = move the curser to right in normal mode
+j = moves the cursor down one line
+l = move cursor right
+
+b = moves to the beginning of the word
+e = moves to the end of the word
+w = moves to the start of the next word

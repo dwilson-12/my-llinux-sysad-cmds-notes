@@ -1,0 +1,37 @@
+* Installing packages				= $ yum install <packagename>
+* Upgrading
+* Deleting					= $ yum remove <package name>
+* View package details information
+* Identify source or location information
+* Packages configuration files
+
+# another way to download and install a package
+$ wget <url.rpm>
+$ rpm -hiv <filename.rpm>
+$ rpm -qa | grep <package name>
+
+
+# verify information of package
+$ rpm -qi <package name>
+
+
+# delete package using rpm
+$ rpm -e <packagename>
+
+
+# list of config files of the package
+$ rpm -qc <packagename>
+
+
+# find out some information of the command
+$ ksh <-- korne shell (package name)
+
+# which package this command belongs to
+$ which <package name>
+$ rpm -qf /usr/bin/package-name
+
+# when is the last time the package is updated
+$ rpm -a -last <package name>
+
+# download only the package in /var/cache/yum  ..cd to 7server and run the command ls -lR 
+$ yum install --downloadonly <package name>

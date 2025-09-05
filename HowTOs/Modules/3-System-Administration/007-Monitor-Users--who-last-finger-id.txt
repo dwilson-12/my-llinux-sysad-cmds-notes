@@ -1,0 +1,6 @@
+Commands
+
+$ who		= tells how many people log-in
+$ last		= record who log-in, boot, and reboots
+$ finger	= trace where user's from and what protocol used. To install $ yum install finger -y. CentOS 8 or above the command now is "pinky"
+$ id username	= gives information of user like  uid, gid

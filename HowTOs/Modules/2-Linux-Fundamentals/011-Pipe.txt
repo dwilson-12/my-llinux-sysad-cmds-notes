@@ -1,0 +1,14 @@
+* A pipe is used by the shell to connect the output of one command directly to the input of another command.
+
+* The symbol for a pipe is the vertical bar ( | )
+
+Syntax:
+
+	$ command [arguments] | command [arguments]
+
+Example
+
+	$ ls -ltr | more
+	
+	# gives the last line of output
+	$ ls -l | tail -1

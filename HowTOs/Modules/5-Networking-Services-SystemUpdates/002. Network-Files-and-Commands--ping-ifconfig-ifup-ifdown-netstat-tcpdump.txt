@@ -1,0 +1,21 @@
+Network Files and Commands
+
+* Interface Detection
+* Assigning an IP address
+* Interface configuration files
+	* /etc/nsswitch.conf
+	* /etc/hosts					= set domain name for your machine
+	* /etc/sysconfig/network			= Hostname file in CentOS 6
+	* /etc/hostname					= Hostname file in CentOS 7
+	* /etc/sysconfig/network-scripts/ifcfg-nic	= This is the file where you can specify your IP
+	* /etc/resolv.conf				= Specifies your DNS Server
+
+# This files can be seen on any linux distribution
+
+* Network Commands
+	$ ping			= send ICMP ECHO_REQUEST to network hosts
+	$ ifconfig		= configure a network interface
+	$ ifup or ifdown	= bring up or bring down the interface
+	$ netstat -rnv		= print network conn., routing tables, interface statistics
+	$ netstat -tulpn	= For finding out which ports of the machine are being open by which services
+	$ tcpdump -i enp0s3	= traces every single transaction leaving and coming into the mac

@@ -1,0 +1,11 @@
+Types of Shell
+
+* sh
+* bash
+* ksh
+* csh
+
+Starting a Shell
+
+* Type shell name e.g. csh
+* Type exit to exit out of shell

@@ -1,0 +1,19 @@
+Sequence:
+
+1. BIOS		-- BIOS executes MBR
+2. MBR		-- Master Boot Record executes GRUB
+3. GRUB		-- Grand Unified Bootloader executes Kernel
+4. Kernel	-- Executes /sbin/init
+5. Init		-- Executes runlevel programs
+6. Runlevel	-- Runlevel programs are executed from /etc/rc.d/rc[n].d/
+
+Newer version of linux
+/etc/systemd/system/default.target
+
+To set new default run-level run
+$ systemctl set-default [new target]
+
+Older version of linux = /etc/inittab
+
+init conf. files are located in = /etc/init.d
+

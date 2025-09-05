@@ -1,0 +1,7 @@
+1. cat
+2. more
+3. less
+4. head		syntax: $ head -2 filename
+5. tail		syntax: $ tail -2 filename
+
+* In less command if you press J it will show you 1 line at a time. Letter k is go back up. Or up and down arrow.

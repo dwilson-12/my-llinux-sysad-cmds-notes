@@ -1,0 +1,39 @@
+# mount the centos7 diskimage and go to /run/media/username/CentOS 7 x86_64/Packages
+
+# create folder in / for localrepo
+$ mkdir localrepo
+
+# estimate file space usage
+$ du -sh
+
+# check the available diskspace
+$ df -h
+
+# copy everything (rpm files) in the Packages directory
+$ cp -rf /run/media/dobido/CentOS\ 7\ x86_64/Packages/* /localrepo/
+
+# go to /etc/yum.repos.d/ directory and delete all repo
+$ rm -rf /etc/yum.repos.d/*
+
+# create a file name local.repo
+$ vi local.repo
+
+# add this values
+[centos7]
+name=centos7
+baseurl=file:///localrepo/
+enabled=1
+gpgcheck=0
+
+NOTE: For CentOS8/9 = command not found
+      So install a package
+      yum install createrepo*
+
+# Then run this command
+$ createrepo /localrepo/
+
+# clean any cache in the old repository
+$ yum clean all
+
+# verify
+$ yum repolist all

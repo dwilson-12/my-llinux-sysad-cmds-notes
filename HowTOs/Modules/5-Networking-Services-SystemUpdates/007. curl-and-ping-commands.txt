@@ -1,0 +1,11 @@
+Example of windows browser
+
+* Linux = curl
+* linux = ping
+
+* Example in linux
+
+$ curl <URL>
+
+# to download files if wget is not available
+$ curl -O <URL>

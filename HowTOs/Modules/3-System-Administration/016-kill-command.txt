@@ -1,0 +1,23 @@
+• kill command is used to terminate processes manually
+• It sends a signal which ultimately terminates or kills a particular process or group of processes
+
+Usage:
+$ kill [OPTION] [PID]
+
+OPTION	= Signal name or signal number/ID
+PID	= Process ID
+
+kill -l	= to get a list of all signal names or signal number
+
+* Most used signals are:
+$ kill PID	= Kill a process with default signal
+$ kill -1	= Restart
+$ kill -2 	= Interrupt from the keyboard just like Ctrl C
+$ kill -9	= Forcefully kill the process
+$ kill -15	= Kill a process gracefully
+
+* Other similar kill commands are:
+$ killall	= kill a process and it's related process
+$ pkill		= kill by the process name
+
+

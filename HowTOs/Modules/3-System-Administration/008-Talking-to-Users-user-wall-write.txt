@@ -1,0 +1,7 @@
+* Commands
+
+$ users	= to see you currently users logged-in
+$ wall	= write a message to anyone who is logged-in .. "write message" + ctrl d
+$ write = write a msg directly to a specific users
+
+ctrl+c to exit

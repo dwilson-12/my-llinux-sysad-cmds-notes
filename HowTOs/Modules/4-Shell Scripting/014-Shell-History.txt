@@ -1,0 +1,18 @@
+# Command 
+$ history
+
+Syntax
+!<number>
+
+Sample Usage:
+$ !406
+
+# display history commands that include "awk" command
+$ history | grep awk
+
+The file where history of your shell command saved = /home/yourname/.bash_history
+
+To view other users history of shell commands
+
+	- Become root (su -)
+	- cat /home/user-dir-name/.bash_history

@@ -1,0 +1,51 @@
+NIC = Network Interface Card
+
+NIC(Network Interface Card) bonding is also known as Network Bonding.
+	It can be defined as the aggregation or combination of multiple
+	NIC into a single bond interface.
+
+It's main purpose is to provide high availability and redundancy.
+
+NIC Bonding Procedure
+
+1. Install bonding driver	= modprobe bonding
+
+2. modinfo bonding	  	= To check if the driver is installed.
+
+3. Create /etc/sysconfig/network-scripts/ifcfg-bond0 file and add this contents.
+
+DEVICE=bond0
+TYPE=Bond
+NAME=bond0
+BONDING_MASTER=yes
+BOOTPROTO=none
+ONBOOT=yes
+IPADDR=192.168.1.55
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+BONDING_OPTS="mode=5 miimon=100"
+
+4. edit  /etc/sysconfig/network-scripts/ethernet1
+
+TYPE=Ethernet
+BOOTPROTO=none
+DEVICE=enp0s3
+ONBOOT=yes
+HWADDR=”MAC from the ifconfig command”
+MASTER=bond0
+SLAVE=yes
+
+5. edit  /etc/sysconfig/network-scripts/ethernet2
+
+TYPE=Ethernet
+BOOTPROTO=none
+DEVICE=enp0s8
+ONBOOT=yes
+HWADDR=”MAC from the ifconfig command”
+MASTER=bond0
+SLAVE=yes
+
+6. Restart network = systemctl restart network
+
+7. Use following command to view bond interface settings like bonding mode & slave interface.
+$ cat /proc/net/bonding/bond0

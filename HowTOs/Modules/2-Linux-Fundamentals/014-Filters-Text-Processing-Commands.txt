@@ -1,0 +1,8 @@
+Command			Description
+
+1. cut			cut parts of lines from specified files or piped data and print the result to stdoutput.
+2. awk 			list by the colums.
+3. grep and egrep	search for a key word and gives the line of that keyword.
+4. sort			Sort in alphabetical order.
+5. uniq			will not show duplicate.
+6. wc			count the words/letters/line in a file.

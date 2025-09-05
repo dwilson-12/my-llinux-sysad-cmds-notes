@@ -1,0 +1,25 @@
+Steps:
+Become root first
+1. Create a new file in /etc/profile.d/motd.sh
+2. Add desired commands in motd.sh
+3. Modify the /etc/ssh/sshd_config file to edit
+   	# PrintMotd yes to PrintMotd no
+4. Restart sshd service
+	$ systemctl restart sshd.service
+
+vi motd.sh
+
+#!/bin/bash
+#
+echo -e "
+################################
+#
+# Welcome to `hostname`
+# This system is running `cat /etc/redhat-release`
+# kernel is `uname -r`
+#
+# You are logged in as `whoami`
+#
+################################
+"
+

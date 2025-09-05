@@ -1,0 +1,43 @@
+* User Account
+	* do not use admin username
+	* uid change to 10000
+	* password policy ($ chage -l <username>, /etc/login.defs)
+	* /etc/pam.d/system-auth
+
+* Remove un-wanted packages
+	$ rpm -qa | wc -l
+	$ rpm -e
+
+* Stop un-used Services
+	$ systemctl -a
+
+* Check on listening Ports
+	$ netstat -tunlp
+
+* Secure SSH Conf.
+	# change ssh port
+	$ cd /etc/ssh/sshd_config
+	# unhash and edit = PermitRootLogin no
+
+* Enable Firewall(iptables/firewalld)
+	$ firewalld-config (w/GUI)
+	$ firewall-cmd
+	$ /etc/sysconfig/iptables-config
+	$ /etc/firewalld/firewalld.conf
+
+* Enable SELinux
+	* Security Enhanced Linux
+	* Controls the permission access of the process
+	* & sestatus
+	* /etc/sysconfig/selinux
+	* Three modes: enforcing, disabled, permissive. Then reboot if modified
+	* $ stat filename
+
+* Change Listening Services Port Numbers
+	* you can change default ports for security 
+
+* Keep your OS up to date (security patching)
+	* Update related to security
+		$ yum update --security
+	* how to keep up to date? Check CentOS or rhel websites for updates.
+	

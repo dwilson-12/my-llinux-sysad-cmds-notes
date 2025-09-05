@@ -1,0 +1,19 @@
+* SATA Stands for Serial Advanced Technology Attachment and SAS stands for Serial Attached SCSI 
+  (SCSI Stands for Small Computer System Interface, typically pronounced as "scuzzy").
+
+* Both SAS and SATA utilize serial communication. Serial communication means that the highway has both lanes
+
+* The main difference between them is that SAS drives are faster and more reliable than SATA drives
+  SAS is generally more expensive, and it's better suited for use in servers or in processing-heavy computer workstations. 
+  SATA is less expensive, and it's better suited for desktop file storage.
+  In a SATA cable, all 4 wires are placed within the same cable. 
+  In a SAS cable, the 4 wires are separated into 2 different cables.
+
+Why divide the wires between 2 cables???
+* So you can connect more devices to one another. With a SATA cable, you can only link the motherboard
+  and the storage drive. You could hook up an expansion device, but that takes up valuable room inside your computer.
+* With a SAS cable, you can hook up the motherboard to both a storage drive and another piece of hardware that has SAS connectors.
+
+Here's what the highways look like, metaphorically:
+* SATA cable: Los Angeles to San Francisco
+* SAS cable: Los Angeles to San Francisco or Los Angeles to Las Vegas

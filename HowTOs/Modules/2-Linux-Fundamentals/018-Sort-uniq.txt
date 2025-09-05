@@ -1,0 +1,13 @@
+* What are sort and uniq commands?
+  	* Sort command sorts in alphabetical order
+	* Uniq command filters out the repeated or duplicate lines
+
+$ sort --version OR sort --help			= Check version or help
+$ sort [filename]				= Sorts file in alphabetical order
+$ sort -r [filename]				= Sort in reverse alphabetical order
+$ sort -k2 [filename]				= Sort by field number
+
+$ uniq [filename]				= Removes duplicates
+$ sort [filename] | uniq			= Always sort first before using uniq their line numbers
+$ sort [filename] | uniq -c			= Sort first then uniq and list count
+$ sort [filename] | uniq -d			= Only show repeated lines

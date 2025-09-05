@@ -1,0 +1,21 @@
+* SSH is a secure way to login from host A to host B.
+  Repetitive tasks require login without a password.
+  Automation through scripts
+
+# Step 1 — Generate the Key
+$ ssh-keygen
+ 
+# Step 2 — Copy the Key to the server
+$ ssh-copy-id root@192.168.1.x
+
+# Step 3 — Login from client to server
+$ ssh root@192.168.1.x
+
+OR
+
+$ ssh –l root 192.168.1.x
+
+
+
+
+

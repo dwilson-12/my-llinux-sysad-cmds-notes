@@ -1,0 +1,50 @@
+Getting started w/ Network Manager
+Network conf methods
+	* nmtui
+	* nmcli
+	* nm-connection-editor
+	* GNOME Settings
+
+* Network Manager is a service that provides set of tools designed specifically to make it easier to
+  manage the network configuration on linux systems and is the default network management
+  service on RHEL 8 and RHEL 9
+
+* It makes network management easier
+* It provides easy setup of connection of the user
+* Network Manager offers management through different tools such as GUI, nmtui, and nmcli.
+
+Network conf methods
+
+* nmcli 		= This tool is useful when access to a graphical env is not available and can be also used within
+	  		  scripts to make network conf changes.
+
+* nmtui 		= This tool can be run within any terminal window and allows changes to be made by making menu 
+	  		  selections and entering data.
+
+* nm-connection-editor 	= A full graphical management tool providing access to most of the NetworkManager
+			  configurations opstions. It can only be accessed through the desktop or console.
+
+* GNOME Settings 	= The network screen of the GNOME desktop settings application allows basic network 
+		   	  management task to be performed.
+
+$ nmcli con show
+
+* Using nmcli to configure static IP
+
+$ nmcli device	(Get the listing of network interface)
+$ nmcli connection modify enp0s3 ipv4.addresses <ipaddress/24>
+$ nmcli connection modify enp0s3 ipv4.geteway <gatewayIP>
+$ nmcli connection modify enp0s3 ipv4.dns 8.8.8.8
+$ nmcli connection down enp0s3
+$ nmcli connection up enp0s3
+$ ip address show enp0s3
+
+* Adding secondary static IP using nmcli
+
+$ nmcli device status
+$ nmcli connection-show --active
+$ ifconfig
+$ nmcli connection modify enp0s3 +ipv4.addresses <ipadd/24>	# if has a secondary NIC
+$ nmcli connection reload
+$ systemctl reboot
+$ ip address show

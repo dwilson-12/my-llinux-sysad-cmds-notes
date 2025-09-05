@@ -1,0 +1,4 @@
+* For loops
+
+	It keeps running until specified number of variable
+	e.g: variable = 10 then run the script 10 times
