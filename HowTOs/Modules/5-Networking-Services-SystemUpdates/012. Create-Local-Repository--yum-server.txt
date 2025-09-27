@@ -3,8 +3,6 @@
 	In Oracle VM click:
 	Devices --> Optical Drives --> Choose Disk image --> and click open.. This automatically mount your dvd to your machine
 
-# go to /run/media/username/CentOS 7 x86_64/Packages
-
 # become root and create folder in / for localrepo
 $ cd /
 $ mkdir localrepo
