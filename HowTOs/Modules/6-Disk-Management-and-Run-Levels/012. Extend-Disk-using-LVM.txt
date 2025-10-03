@@ -15,7 +15,7 @@ Few Options:
 	$ fdsik -l
 
 # partition disk
-$ fdisk /dev/sdd
+	$ fdisk /dev/sdd
 	Command (m for help): n, p, 1, default, default, p, t, L, 8e, w
 
 # reboot the system
