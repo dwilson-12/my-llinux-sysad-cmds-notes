@@ -6,10 +6,16 @@
 
 Example:
 
+- In Oracle VM you add first a Virtual Hard Disk in the storage tab -- Controller:SATA -- Add Hard Disk -- Create new disk  -- VDI --Dynamically allocated and so on..
+
+# Become root
 # Create a new partition from new disk
 $ fsidk /dev/sdb
 Command (m for help):	n = new partition
 			p = primary
+			partition number: default
+			first sector: default
+			last sector: default
 			w = write table to disk
 	
 # Next is to assign file system type
