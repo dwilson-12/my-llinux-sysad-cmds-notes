@@ -29,56 +29,65 @@ Ans: When data moves in and out of a server its packet information
 
 FIREWALLD
 
-*Firewalld works the same way as iptables but of course it has it own commands
+* Firewalld works the same way as iptables but of course it has it own commands
 	$ firewall-cmd
 
 * It has a few pre-defined service rules that are very easy to turn on and off
 	Services such as: NFS, NTP, HTTPD etc.
 
-*Firewalld also has the following:
+* Firewalld also has the following:
+
 	* Table
 	* Chains
 	* Rules
 	* Targets
 
 
-You can run one or the other
+You can run one or the other:
 	iptables or firewalld
 
-* Make sure iptables is stopped, disabled and mask
+# Make sure iptables is stopped, disabled and mask
 	$ systemctl stop iptables
 	$ systemctl disable iptables
 	$ systemctl mask iptables
 
-* Now check if filewalld package is installed
+# Now check if filewalld package is installed
 	$ rpm –qa | grep firewalld
 
-* Start firewalld
+# Start firewalld
 	$ systemctl start/enable firewalld
 
-* Check the rule of firewalld
+# Check the rule of firewalld
 	$ firewall-cmd --list-all
 
-* Get the listing of all services firewalld is aware of:
+# Get the listing of all services firewalld is aware of:
 	$ firewall-cmd --get-services
 
-* To make firewalld re-read the configuration added
+# To make firewalld re-read the configuration added
 	$ firewall-cmd --reload
 
-* The firewalld has multiple zone, to get a list of all zones
+# The firewalld has multiple zone, to get a list of all zones
 	$ firewall-cmd --get-zones
 
-* To get a list of active zones
+# To get a list of active zones
 	$ firewall-cmd --get-active-zones 
 
-* To get firewall rules for public zone
+# To get firewall rules for public zone
 	$ firewall-cmd --zone=public --list-all 
 	OR
 	$ firewall-cmd --list-all 
 
-* All services are pre-defined by firewalld.  What if you want to add a 3rd party service
+# All services are pre-defined by firewalld.  What if you want to add a 3rd party service
 	/usr/lib/firewalld/services/allservices.xml
 	Simply cp any .xml file and change the service and port number
+	$ cat test.xml
+	
+	<?xml version="1.0" encoding="utf-8"?>
+	<service>
+		<short>SSH</short>
+		<description>To login</description>
+		<port protocol="tcp" port="22"/>
+	</service>
 
 PRACTICAL EXAMPLES
 
@@ -92,15 +101,27 @@ PRACTICAL EXAMPLES
 	$ firewall-cmd --reload 
 
 * To add or remove a service permanently
+	# --permanent flag prevents the removal of service if you use the --reload flag 
 	$ firewall-cmd --add-service=http --permanent
 	$ firewall-cmd --remove-service=http --permanent
 
-* To add a service that is not pre-defined by firewalld
-	$ /usr/lib/firewalld/services/allservices.xml
-	$ Simply cp any .xml file sap.xml and change the service and port number (32)
+* To add a service that is not pre-defined by firewalld /usr/lib/firewalld/services/allservices.xml
+	$ cd /usr/lib/firewalld/services/
+	# Simply cp any .xml file sap.xml and change the service and port number (32)
+	$ cp ssh.xml sap.xml
+	$ vi sap.xml
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<service>
+		<short>SAP</short>
+		<description>This is 3rd party application service</description>
+		<port protocol="tcp" port="32"/>
+	</service>
+
 	$ systemctl restart firewalld
-	$ firewall-cmd --get-services	(to verify new service)
+	$ firewall-cmd --get-services | grep sap
 	$ firewall-cmd --add-service=sap
+	$ firewall-cmd --list-all
 
 * To add a port
 	$ firewall-cmd --add-port=1110/tcp
@@ -109,7 +130,10 @@ PRACTICAL EXAMPLES
 	$ firewall-cmd --remove-port=1110/tcp
 
 * To reject incoming traffic from an IP address
-	$ firewall-cmd --add-rich-rule='rule family="ipv4" source address=“192.168.0.25" reject’
+	$ firewall-cmd --add-rich-rule='rule family="ipv4" source address=“192.168.0.25" reject'
+f
+* To remove the rule
+	$ firewall-cmd --remove-rich-rule='rule family="ipv4" source address=“192.168.0.25" reject'
 
 * To block and unblock ICMP incoming traffic
 	$ firewall-cmd --add-icmp-block-inversion
